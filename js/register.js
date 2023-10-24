@@ -45,7 +45,7 @@ function signUp(e) {
         const { confirmPassword, ...data } = user
         const newInfo = {
             ...data,
-            status: true,  
+            status: "normal",
             id
         }
         arrUser.push(newInfo);
@@ -58,11 +58,13 @@ function signUp(e) {
 function validate() {
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     const regexName = /^\w{5,}$/;
     const regexEmail = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+    const regexPhone = /^(0\d{9}|0\d{10}|[+]84\d{9}|[+]84\d{10})$/;
     const regexPassword = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
 
     let check = true;
@@ -81,8 +83,15 @@ function validate() {
         document.getElementById("emailError").innerHTML = "";
     }
 
+    if (!regexPhone.test(phone)) {
+        document.getElementById("phoneError").innerHTML = "Số điện thoại không đúng định dạng!";
+        check = false;
+    } else {
+        document.getElementById("phoneError").innerHTML = "";
+    }
+
     if (!regexPassword.test(password)) {
-        document.getElementById("passwordError").innerHTML = "Mật khẩu phải có ít nhất 6 ký tự, bao gồm ít nhất một chữ hoa và một số!";
+        document.getElementById("passwordError").innerHTML = "Mật khẩu phải có ít nhất 6 ký tự, bao gồm ít nhất một chữ <br> hoa và một số!";
         check = false;
     } else {
         document.getElementById("passwordError").innerHTML = "";

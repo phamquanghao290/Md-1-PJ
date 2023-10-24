@@ -161,7 +161,7 @@ header {
 }
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: auto auto auto;
     gap: 50px;
 }
 
@@ -229,8 +229,8 @@ header {
 }
 
 .product .box .card {
-    width: 290px;
-    height: 500px;
+    width: 330px;
+    height: 550px;
     box-shadow: 0 0 8px #bbbbbb;
     border-radius: 5px;
     text-align: center;
@@ -314,7 +314,7 @@ button .fa-solid {
 
 .theInfor{
     width: 100%;
-    height: 1300px;
+    height: 1380px;
 }
 
 .infor {
@@ -352,7 +352,7 @@ button .fa-solid {
     display: flex;
     justify-content: center;
     margin-top: 100px;
-    gap: 50px;
+    gap: 45px;
     font-size: 15px;
     border: none;
     
@@ -474,6 +474,10 @@ footer {
 
 .content_f .logo p {
     margin-top: 20px;
+}
+
+.content_f ul li:nth-child(1) {
+    font-size: 25px;
 }
 
 /* them */
@@ -660,4 +664,12 @@ footer {
 }
 
 
-
+.change-page{
+    display: none;
+        justify-content: center;
+        height: 100px;
+        align-items: center;
+}
+.change-page span{
+    margin: 5px;
+}

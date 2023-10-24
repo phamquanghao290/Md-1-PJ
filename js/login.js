@@ -7,7 +7,7 @@ function login(e) {
     let users = JSON.parse(localStorage.getItem("users"));
     let check = false;
     if (userName.value === "admin" && passWord.value === "admin") {
-      window.location.href = "adminuser.html";
+      window.location.href = "ListOrderAdmin.html";
       return;
     }
     for (let i = 0; i < users.length; i++) {
@@ -15,7 +15,7 @@ function login(e) {
         userName.value == users[i].username &&
         passWord.value == users[i].password
       ) {
-        if (!users[i].status) {
+        if (users[i].status == "ban") {
           alert("Ban dang bi Ban !");
           return;
         }
@@ -33,3 +33,4 @@ function login(e) {
     }
   }
 }
+

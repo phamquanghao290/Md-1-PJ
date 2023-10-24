@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Product</title>
+    <link rel="stylesheet" href="./css/addproduct.css">
+</head>
+
+<body>
+    <!-- Dashboard -->
+    <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+        <!-- Vertical Navbar -->
+        <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
+            id="navbarVertical">
+            <div class=" container-fluid">
+            <!-- Toggler -->
+            <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Brand -->
+            <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="25" viewBox="0 0 25 29" fill="none"
+                        style="font-size: 50px;">
+                        <path
+                            d="M3.56348 22.9H24.5V0.5H3.5057C1.57228 0.506417 0.00635613 2.08725 0 4.03908V24.6646H0.00057783C0.00057783 24.6733 0 24.6821 0 24.6908C0 26.7558 1.60521 28.5 3.5057 28.5H24.5V26.6333H3.5057C2.63895 26.6333 1.84906 25.7076 1.84906 24.6908C1.84906 23.7202 2.63433 22.9 3.56348 22.9ZM5.54717 2.38592H11.0943V12.4671L8.29764 9.9885L5.54717 12.4525V2.38592ZM1.84906 4.05367C1.84617 3.12617 2.58695 2.37192 3.5057 2.36667H3.69811H5.54717H3.69811V14.9667H5.52637L8.30458 12.4782L11.1117 14.9667H12.9434V2.36667H22.6509V21.0333H5.55179H3.70274H3.56348C2.96196 21.0333 2.37141 21.192 1.84963 21.493V4.05367H1.84906Z"
+                            fill="#FFCA42" />
+                    </svg>
+                    <p>FUTURER BOOK</p>
+                </div>
+            </a>
+
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                <!-- Navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-warningx fs-1" href="ListOrderAdmin.html">
+                            <i class="bi bi-house"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-bar-chart"></i> Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customuser.html">
+                            <i class="bi bi-people"></i>User
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-bookmarks"></i> Collections
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-people"></i> Nothing in Here
+                        </a>
+                    </li>
+                </ul>
+                <!-- Divider -->
+                <hr class="navbar-divider my-5 opacity-20">
+
+                <div class="mt-auto"></div>
+                <!-- User (md) -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-square"></i> Account
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    </nav>
+    <!-- Main content -->
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-0 ls-tight">Product</h1>
+                        </div>
+                        <!-- Actions -->
+                        <div class="col-sm-6 col-12 text-sm-end">
+                        </div>
+                    </div>
+                    <!-- Nav -->
+                    <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">Information</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- Main -->
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+                <div class="row g-6 mb-6">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Budget</span>
+                                        <span class="h3 font-bold mb-0">$750.90</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
+                                            <i class="bi bi-credit-card"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-success text-success me-2">
+                                        <i class="bi bi-arrow-up me-1"></i>13%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">New
+                                            projects</span>
+                                        <span class="h3 font-bold mb-0">215</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-success text-success me-2">
+                                        <i class="bi bi-arrow-up me-1"></i>30%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total
+                                            hours</span>
+                                        <span class="h3 font-bold mb-0">1.400</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
+                                            <i class="bi bi-clock-history"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                        <i class="bi bi-arrow-down me-1"></i>-5%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work
+                                            load</span>
+                                        <span class="h3 font-bold mb-0">95%</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
+                                            <i class="bi bi-minecart-loaded"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-success text-success me-2">
+                                        <i class="bi bi-arrow-up me-1"></i>10%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row  grid gap-3 ">
+                        <div class="p-2 g-col-4  card shadow border-0 px-1 ">
+                            <div class="card-header">
+                                <h5 class="mb-0 title">Add Product</h5>
+                            </div>
+                            <div class="px-2 ">
+                                <div class="mb-3 ">
+                                    <label for="name" class="form-label">Name Product</label>
+                                    <input type="text" class="form-control" id="name-product"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="exampleInputPassword1" class="form-label">Price Product</label>
+                                    <input type="number" class="form-control" id="price">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label class="form-label">Category</label>
+                                    <select class="form-select form-select-lg " aria-label="Large select example"
+                                        id="categoryId">
+                                        <option selected>Open this select menu</option>
+                                        <option value="4">Lịch Sử</option>
+                                        <option value="5">Đời Sống</option>
+                                        <option value="6">Tâm Lý Tình Cảm</option>
+                                        <option value="7">Tiểu Thuyết</option>
+                                        <option value="8">Giáo Dục</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFileSm" class="form-label">Image Product</label>
+                                    <input class="form-control form-control-sm" id="formFileSm" type="file"
+                                        onchange="changeImage()">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="exampleInputPassword1" class="form-label">Stock
+                                        Product</label>
+                                    <input type="number" class="form-control" id="stock">
+                                </div>
+                                <button onclick="addProduct()" class="btn btn-primary" id="add">Add Product</button>
+                                <button onclick="saveProduct()" class="btn btn-primary" style="display: none;"
+                                    id="save">Save
+                                    Product</button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card p-2 g-col-8 shadow border-0 " id="a">
+                            <div class="card-header">
+                                <h5 class="mb-0 title">All Product</h5>
+                            </div>
+                            <div class="table-responsive" id="b">
+                                <table class="table table-hover table-nowrap">
+                                    <thead class="thead-light ">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Img</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Stock</th>
+                                            <th scope="col">Acction</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="render-product">
+
+                                        <!-- <tr>
+                                            <td>
+
+                                                <a class="text-heading font-semibold" href="#">
+                                                    11111
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <img src="./img/caycam.jpg" alt="" style="width: 100px; ">
+                                            </td>
+                                            <td>
+
+                                                <a class="text-heading font-semibold" href="#">
+                                                    aaaaaaaaaaaaaaaaaa
+                                                </a>
+                                            </td>
+                                            <td>
+                                                $3.500
+                                            </td>
+                                            <td>
+                                                20
+                                            </td>
+                                            <td><a href="#" class="btn btn-sm btn-neutral">Edit</a><a href="#"
+                                                    class="btn btn-sm btn-neutral">Delete</a></td>
+                                        </tr> -->
+                                    </tbody>
+                                    <!-- <tfoot style="display: flex;justify-items: center;">
+                                        <tr style="display: flex;justify-items: center;">
+                                            <td style="display: flex;justify-content: center;">
+                                                <span class="btn btn-primary">1</span>
+                                                <span class="btn btn-primary">2</span>
+                                                <span class="btn btn-primary">3</span>
+                                            </td>
+                                        </tr>
+                                    </tfoot> -->
+                                </table>
+
+
+                            </div>
+                            <div id="changePage">
+                                <!-- <span class="btn btn-primary">1</span>
+                                <span class="btn btn-primary">1</span> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="./js/addproduct.js"></script>
+
+</html>

@@ -1,245 +1,234 @@
-
-    main {
-        font-family: "Poppins", sans-serif;
-        height: 120vh;
-        width: 70vw;
-        margin: 0px auto;
-        padding: 50px 0px 0px;
-        color: #4E5150;
-        display: flex;
-        column-gap: 100px;
-    }
-        .title-checkout{
-            text-align: center;
-                height: 150px;
-                padding: 30px;
-                background-color: #174795;
-                color: #ffff;
-        }
-    .checkout-form {
-            width: 50%;
-        }
-                  .checkout-form h6 {
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                  }
-           
-
-        
-          .infor-ship label{
-          margin-left: 18px;
-          }
-                .form-control {
-                    
-                    position: relative;
-                    border: none;
-                }
-                .form-control span {
-                    position: absolute;
-                    top: 19px;
-                    left: 23px;
-                }
-                .form-control  label:not([for="checkout-checkbox"]) {
-                        
-                        
-                        font-weight: 500;
-                        margin-bottom: 2px;
-                    }
-
-                    .form-control  input:not([type="checkbox"]) {
-                        width: 100%;
-                        padding: 10px 10px 10px 40px;
-                        border-radius: 10px;
-                        outline: none;
-                       
-                        font-size: 12px;
-                        font-weight: 700;
-
-                    
-                    }
-
-                                   .form-control label[for="checkout-checkbox"] {
-                        font-size: 9px;
-                        font-weight: 500;
-                        line-height: 10px;
-                    }
-
-                                        
-                
-
-                .form-group {
-                    display: flex;
-                    column-gap: 25px;
-                }
-
-                .checkbox-control {
-                    display: flex;
-                    align-items: center;
-                    column-gap: 10px;
-                }
-                                           .form-group span{
-                                            position: absolute;
-                                            top: 45px;
-                                           }
-
-                .form-control-btn {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
-                }
-                .form-control-btn  button {
-                        padding: 10px 25px;
-                        font-size: 1rem;
-                        color: #fff;
-                        background: #F2994A;
-                        border: 0;
-                        border-radius: 7px;
-                        letter-spacing: .5px;
-                        font-weight: 200;
-                        cursor: pointer;
-                    }
-            
-
-        .checkout-details {
-            width: 80%;
-        }
-
-            .checkout-details-inner {
-                background: #F2F2F2;
-                border-radius: 10px;
-                padding: 20px;
-                width: 100%;
-            }
-
-
-                .checkout-lists {
-                    margin-bottom: 40px;
-                    height: 380px;
-                }
-                .card-order {
-                        width: 100%;
-                        padding: 10px;
-                       display: flex ;
-                       justify-content: space-evenly;
-                       align-items: center;
-                      text-align: center;
-                       
-                        
-                    }
-                        .img-card{
-                            margin-left: -70px;
-                            display: flex;justify-content: center;
-                        }
-
-         .card-order  img {
-                                width: 25%;
-                                object-fit: fill;
-                                border-radius: 10px;
-                            }
-                        
-
-                        .card-details {
-                            display: flex;
-                           
-                        }
-                            .card-name {
-                                font-size: 1rem;
-                                font-weight: 500;
-                                margin-right: 50px;
-                            }
-
-                            .card-price {
-                                font-size: 0.8rem;
-                                font-weight: 500;
-                                color: #F2994A;
-                                margin-top: 5px;
-                                margin-right: 20px;
-                            }
-        
-                            
-
-                            .card-wheel {
-                                text-align: center;
-                                margin-top: 17px;
-                                border: .2px solid #4e515085;
-                                width: 100px;
-                               
-                                padding: 8px 8px;
-                                border-radius: 10px;
-                                font-size: 1rem;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                            }
- .card-wheel button {font-size: 1rem;
-                                    background: #E0E0E0;
-                                    color: #828282;
-                                    width: 17px;
-                                    height: 17px;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    border: 0;
-                                    cursor: pointer;
-                                    border-radius: 3px;
-                                    font-weight: 500;
-                                }
-                     
-
-                .checkout-shipping,
-                .checkout-total {
-                    
-                   margin: 10px;
-                    display: flex;
-                    font-size: 16px;
-                    padding: 5px 0px;
-                    border-top: 1px solid #BDBDBD;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-                                        .checkout-shipping p {text-align: center;
-                        font-size: 1rem;
-                        font-weight: 500;
-                    }
-           .checkout-total p {text-align: center;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        h6,p {
-            padding-top: 10px;
-        }
-
-       /* page */
-
-       #page-item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-       }
-          
+main {
+    font-family: "Poppins", sans-serif;
+    height: 120vh;
+    width: 70vw;
+    margin: 0px auto;
+    padding: 50px 0px 0px;
+    color: #4E5150;
+    display: flex;
+    column-gap: 100px;
+}
     
+.title-checkout{
+    text-align: center;
+    height: 150px;
+    padding: 30px;
+    background-color: #174795;
+    color: #ffff;
+}
+    
+.checkout-form {
+    width: 50%;
+}
+                  
+.checkout-form h6 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.infor-ship label{
+    margin-left: 18px;
+}
+                
+.form-control {
+    position: relative;
+    border: none;
+}
+
+.form-control span {
+    position: absolute;
+    top: 19px;
+    left: 23px;
+}
+                
+.form-control  label:not([for="checkout-checkbox"]) {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.form-control  input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 12px;
+    font-weight: 700;            
+}
+
+.form-control label[for="checkout-checkbox"] {
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 10px;
+}
+
+.form-group {
+    display: flex;
+    column-gap: 25px;
+}
+
+.checkbox-control {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.form-group span{
+    position: absolute;
+    top: 45px;
+}
+
+.form-control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.form-control-btn  button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background: #F2994A;
+    border: 0;
+    border-radius: 7px;
+    letter-spacing: .5px;
+    font-weight: 200;
+    cursor: pointer;
+}
+            
+.checkout-details {
+    width: 80%;
+}
+
+.checkout-details-inner {
+    background: #F2F2F2;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.checkout-lists {
+    margin-bottom: 40px;
+    height: 380px;
+}
+                
+.card-order {
+    width: 100%;
+    padding: 10px;
+    display: flex ;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;                 
+}
         
-           .button-2 {
+.img-card{
+    margin-left: -70px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-order img {
+    width: 25%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+                        
+.card-details {
+    display: flex;
+}
+
+.card-name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 50px;
+}
+
+.card-price {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #F2994A;
+    margin-top: 5px;
+    margin-right: 20px;
+}
         
-               background-color: rgba(51, 51, 51, 0.05);
-               border-radius: 8px;
-               border-width: 0;
-               color: #333333;
-               cursor: pointer;
-               display: inline-block;
-               font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-               font-size: 14px;
-               font-weight: 500;
-               line-height: 20px;
-               list-style: none;
-               margin: 0 5px;
-               padding: 10px 12px;
-               text-align: center;
-               transition: all 200ms;
-               vertical-align: baseline;
-               white-space: nowrap;
-               user-select: none;
-               -webkit-user-select: none;
-               touch-action: manipulation;
-           }
+.card-wheel {
+    text-align: center;
+    margin-top: 17px;
+    border: .2px solid #4e515085;
+    width: 100px;
+    padding: 8px 8px;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-wheel button {
+    font-size: 1rem;
+    background: #E0E0E0;
+    color: #828282;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 500;
+}
+                     
+.checkout-shipping, .checkout-total {
+    margin: 10px;
+    display: flex;
+    font-size: 16px;
+    padding: 5px 0px;
+    border-top: 1px solid #BDBDBD;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-shipping p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.checkout-total p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+        
+h6,p {
+    padding-top: 10px;
+}
+       /* page */
+#page-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.button-2 {
+    background-color: rgba(51, 51, 51, 0.05);
+    border-radius: 8px;
+    border-width: 0;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin: 0 5px;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}

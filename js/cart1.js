@@ -4,7 +4,10 @@ let currentPage = 1
 const productPage = 2
 let totalProduct = cartUser.length
 let totalPage = Math.ceil(totalProduct / productPage)
-
+const USDollar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
 function renderOrder(page) {
     currentUser = JSON.parse(localStorage.getItem("currentUser"))
     cartUser = currentUser.cart
@@ -13,10 +16,10 @@ function renderOrder(page) {
     let text = ""
     for (let i = startPage; i < endPage && i < totalProduct; i++) {
         text += `
-        <div class="card-order">
-                         <img src="${cartUser[i].img}" alt="">
+        <div class="card-order" >
+                         <img src="${cartUser[i].img}" alt="" >
                             <div class="card-name">${cartUser[i].name}</div>
-                            <div class="card-price">${cartUser[i].price * cartUser[i].quantity} </div>
+                            <div class="card-price">${USDollar.format(cartUser[i].price * cartUser[i].quantity)} </div>
                             <div class="card-wheel">
                                 <button onclick="reduce(${cartUser[i].id})">-</button>
                                 <span>${cartUser[i].quantity}</span>
@@ -26,6 +29,11 @@ function renderOrder(page) {
        `
     }
     document.getElementById("order-list").innerHTML = text
+}
+function inforProduct(product) {
+    console.log(product);
+
+    
 }
 function changePage(page) {
     currentPage = page
@@ -51,13 +59,9 @@ function reduce(id) {
         if (cartUser[i].id == id) {
             if (cartUser[i].quantity == 0) {
                 cartUser.splice(i, 1)
-
             } else {
                 cartUser[i].quantity--
-
             }
-            
-
             break;
         }
     }
@@ -70,13 +74,11 @@ function reduce(id) {
 
 function renderPage() {
     let text = ""
-     totalProduct = cartUser.length
-     totalPage = Math.ceil(totalProduct / productPage)
+    totalProduct = cartUser.length
+    totalPage = Math.ceil(totalProduct / productPage)
     for (let i = 1; i <= totalPage; i++) {
-
         text += `<span class="button-2" onclick="changePage(${i})"> ${i}</span>
     `
-
     }
     document.getElementById("page-item").innerHTML = text
 }
@@ -89,17 +91,22 @@ function totalMoney() {
         total += cartUser[i].price * cartUser[i].quantity
     }
     let tax = total * 5 / 100
-    document.getElementById("tax-money").innerHTML = tax
-    document.getElementById("total-money").innerHTML = total + tax
+    document.getElementById("tax-money").innerHTML = USDollar.format(tax)
+    document.getElementById("total-money").innerHTML = USDollar.format(total + tax)
 }
 totalMoney()
 let id
+let dayOrder
+let day
 function idOrder() {
     const dateOrder = new Date();
-
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     id = `${dateOrder.getDate()}${dateOrder.getDay()
         }${dateOrder.getYear()}${dateOrder.getHours()}${dateOrder.getMilliseconds()}`
         ;
+    dayOrder = ` ${weekday[dateOrder.getDay()]}-${dateOrder.getDate()}-${dateOrder.getMonth() + 1}-${dateOrder.getFullYear()}
+    `
+    console.log(dayOrder);
 }
 idOrder()
 let payList = JSON.parse(localStorage.getItem("payList")) || []
@@ -109,11 +116,15 @@ function pay(e) {
     let currentUserOrder = { ...currentUser }
     currentUserOrder.idOrder = id
     currentUserOrder.pay = document.getElementById("total-money").innerHTML
+    currentUserOrder.dateOrder = dayOrder
+    currentUserOrder.status = "Wait"
     payList.push(currentUserOrder)
     currentUser.cart = []
     localStorage.setItem("currentUser", JSON.stringify(currentUser))
     localStorage.setItem("payList", JSON.stringify(payList))
     renderOrder()
-    window.location.href = "loadingPay.html"
+    setTimeout(() => {
+        window.location.href = "loadingPay.html";
+    }, 2000);
 }
 

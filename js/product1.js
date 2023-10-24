@@ -225,52 +225,67 @@ function logOut() {
 let product = JSON.parse(localStorage.getItem("products"))
 let category = JSON.parse(localStorage.getItem("category"))
 // render categpory
+const USDollar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
 
 function renderCategoty() {
-    console.log(111);
+
     let text = ""
     for (let i = 0; i < category.length; i++) {
         text += `
-            <li onclick="chooserProduct(${category[i].id})">${category[i].name} </li >
+            <li onclick="chooserProduct(${category[i].id},${currentPage})">${category[i].name} </li >
                 `
     }
     document.getElementById("category_box").innerHTML = text
 
 }
-renderCategoty()
+
 // render product
-function chooserProduct(id) {
+let currentPage = 1
+const productPage = 6
+let totalProduct = product.length
+let totalPage = Math.ceil(totalProduct / productPage)
+
+function chooserProduct(id, page) {
     let text = ""
     if (id == 0) {
-        for (let i = 0; i < product.length; i++) {
+        let startPage = (page - 1) * productPage
+        let endPage = startPage + productPage
+
+        for (let i = startPage; i < endPage && i < totalProduct; i++) {
             text += `
         <div class="card grid-item"  style="width: 260px; ">
-        <img src="${product[i].img}" class="card-img-top" alt="" >
+        <img src="${product[i].img}" class="card-img-top" alt=""  onclick="inforProduct(${product[i].id})" style="cursor: pointer;">
         <div class="card-body">
           <h5 class="card-title">${product[i].name}</h5>
           <p class="card-text">Some quick example text 
           </p>
           <span onclick="buy(${product[i].id})" class="btn btn-primary">Add to card</span>
-          <span style="float: right;margin-right: 20px;margin-top: 6px;">${product[i].price}</span>
+          <span style="float: right;margin-right: 20px;margin-top: 6px;">${USDollar.format(product[i].price)}</span>
         </div>
       </div>
         `
 
         }
         document.getElementById("list-card").innerHTML = text
+        document.getElementById("change-page").style.display = "flex"
+        renderCategoty()
         return
     }
+    document.getElementById("change-page").style.display = "none"
     let productRender = product.filter((item) => item.categoryId == id)
     for (let i = 0; i < productRender.length; i++) {
         text += `
         <div class="card grid-item"  style="width: 260px; ">
-        <img src="${productRender[i].img}" class="card-img-top" alt="" >
+        <img src="${productRender[i].img}" class="card-img-top" alt="" onclick="inforProduct(${productRender[i].id}) style="cursor: pointer;" >
         <div class="card-body">
           <h5 class="card-title">${productRender[i].name}</h5>
           <p class="card-text">Some quick example text 
           </p>
           <span class="btn btn-primary" onclick="buy(${productRender[i].id})">Add to card</span>
-          <span style="float: right;margin-right: 20px;margin-top: 6px;">${productRender[i].price}</span>
+          <span style="float: right; margin-right: 20px; margin-top: 6px;">${USDollar.format(productRender[i].price)}</span>
         </div>
       </div>
         `
@@ -280,6 +295,31 @@ function chooserProduct(id) {
 
 }
 chooserProduct(0)
+function inforProduct(id) {
+    let productInfor = product.find((item) => item.id == id)
+    localStorage.setItem("currentProduct",JSON.stringify(productInfor))
+    window.location.href="theInfor.html"
+}
+function changePage(page) {
+    currentPage = page
+    chooserProduct(0, currentPage)
+
+}
+function renderPage() {
+    let text = ""
+    totalProduct = product.length
+    totalPage = Math.ceil(totalProduct / productPage)
+    for (let i = 1; i <= totalPage; i++) {
+
+        text += `
+         <span class="btn btn-primary" onclick="changePage(${i})">${i}</span>
+    `
+
+    }
+    document.getElementById("change-page").innerHTML = text
+}
+renderPage()
+chooserProduct(0, currentPage)
 function totalOrder() {
 
     if (currentUser.cart.length == 0) {
@@ -343,8 +383,29 @@ function change() {
     } else {
         window.location.href = "cart1.html"
     }
+}
 
+function searchId() {
+    let products = JSON.parse(localStorage.getItem("products"))
+    let textSearch = document.getElementById("search").value;
+    let searchProduct = products.filter(item => item.name.toLowerCase().includes(textSearch.toLowerCase()))
+    let text = ""
+    for (let i = 0; i < searchProduct.length; i++) {
+        text += `
+        <div class="card grid-item"  style="width: 260px;">
+        <img src="${searchProduct[i].img}" class="card-img-top" alt=""  >
+        <div class="card-body">
+          <h5 class="card-title">${searchProduct[i].name}</h5>
+          <p class="card-text">Some quick example text 
+          </p>
+          <span onclick="buy(${searchProduct[i].id})" class="btn btn-primary">Add to card</span>
+          <span style="float: right;margin-right: 20px;margin-top: 6px;">${searchProduct[i].price}</span>
+        </div>
+      </div>
+        `
 
+    }
+    document.getElementById("list-card").innerHTML = text
 }
 
 
